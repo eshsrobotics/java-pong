@@ -10,14 +10,19 @@
 apply plugin: 'application'
 
 // Apply the java plugin to add support for Java
-apply plugin: 'java'
+apply plugin: 'java-library'
 
 // The 'java' plugin requires an application version variable.
 version = "0.0.1"
 
+application {
+    // This must match your application's main class.
+    mainClass = 'Hello'
+}
+
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion = JavaLanguageVersion.of(15)
     }
 }
 
@@ -40,4 +45,15 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
+
+    // This is the slick2d core library.  Anything using Slick2D needs at least
+    // this.
+    compile 'org.slick2d:slick2d-core:1.0.2'
+
+    // This is the slick2d core library.  Anything using Slick2D needs at least
+    // this.
+    compile 'org.slick2d:slick2d-core:1.0.2'
+
+    // This installs an example game which uses slick2d.
+    compile 'org.slick2d:slick2d-examples:1.0.2'
 }
