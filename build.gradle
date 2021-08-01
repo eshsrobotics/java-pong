@@ -6,9 +6,22 @@
  * user guide available at https://docs.gradle.org/4.4.1/userguide/tutorial_java_projects.html
  */
 
-/*
+// Enable support for running from the terminal.
+apply plugin: 'application'
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+
+// The 'java' plugin requires an application version variable.
+version = "0.0.1"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+version = '1.2.1'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -28,4 +41,3 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
 }
-*/
