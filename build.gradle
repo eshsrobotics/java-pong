@@ -17,7 +17,7 @@ version = "0.0.1"
 
 application {
     // This must match your application's main class.
-    mainClass = 'Hello'
+    mainClass = 'hello.Hello'
 }
 
 java {
